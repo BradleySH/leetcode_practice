@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-string solutionToRun = "MinStack";
+string solutionToRun = "ReversedLinkedList";
 
 switch (solutionToRun)
 {
@@ -15,6 +15,10 @@ switch (solutionToRun)
 
     case "MinStack":
         RunMinStack();
+        break;
+
+    case "ReversedLinkedList":
+        RunReversedLinkedList();
         break;
 }
 
@@ -60,3 +64,30 @@ static void RunMinStack()
     Console.WriteLine(minStack.GetMin());
 }
 
+static void RunReversedLinkedList()
+{
+    // Create a linked list: 1 -> 2 -> 3 -> 4 -> 5
+    ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+
+    // Test Iterative Approach
+    Console.WriteLine("Iterative Approach");
+    ListNode? reversedIterative = ReversedLinkedList.ReverseList(head);
+    PrintLinkedList(reversedIterative);
+
+    // Recreate the linked list for the recursive approach
+    head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+
+    Console.WriteLine("Recursive Approach");
+    ListNode? reversedRecursive = ReversedLinkedList.ReverseLinkedListRecursive(head);
+    PrintLinkedList(reversedRecursive);
+}
+
+static void PrintLinkedList(ListNode? head)
+{
+    while (head != null)
+    {
+        Console.Write(head.val + " -> ");
+        head = head.next;
+    }
+    Console.WriteLine();
+}
