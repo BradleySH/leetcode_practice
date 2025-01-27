@@ -12,3 +12,4 @@
 /Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.pdb
 /Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.genruntimeconfig.cache
 /Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/ref/neetcodesolutions.dll
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.sourcelink.json
