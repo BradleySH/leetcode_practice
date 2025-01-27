@@ -1,0 +1,14 @@
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/bin/Debug/net8.0/neetcodesolutions
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/bin/Debug/net8.0/neetcodesolutions.deps.json
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/bin/Debug/net8.0/neetcodesolutions.runtimeconfig.json
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/bin/Debug/net8.0/neetcodesolutions.dll
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/bin/Debug/net8.0/neetcodesolutions.pdb
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.AssemblyInfoInputs.cache
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.AssemblyInfo.cs
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.csproj.CoreCompileInputs.cache
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.dll
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/refint/neetcodesolutions.dll
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.pdb
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/neetcodesolutions.genruntimeconfig.cache
+/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/obj/Debug/net8.0/ref/neetcodesolutions.dll
