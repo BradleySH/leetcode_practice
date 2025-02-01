@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-string solutionToRun = "ReversedLinkedList";
+string solutionToRun = "DesignLinkedList";
 
 switch (solutionToRun)
 {
@@ -19,6 +19,14 @@ switch (solutionToRun)
 
     case "ReversedLinkedList":
         RunReversedLinkedList();
+        break;
+
+    case "MergeTwoSortedLinkedLists":
+        RunMergeTwoSortedLinkedLists();
+        break;
+
+    case "DesignLinkedList":
+        RunDesignLinkedList();
         break;
 }
 
@@ -90,4 +98,48 @@ static void PrintLinkedList(ListNode? head)
         head = head.next;
     }
     Console.WriteLine();
+}
+
+static void RunMergeTwoSortedLinkedLists()
+{
+    ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+    ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+    Console.WriteLine("Iterative Approach");
+    ListNode? merged = MergeTwoSortedLinkedLists.MergeTwoLists(list1, list2);
+    PrintLinkedList(merged);
+
+    list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+    list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+    Console.WriteLine("Recursive Approach");
+    ListNode? mergedRecurive = MergeTwoSortedLinkedLists.MergeTwoListsRecursive(list1, list2);
+    PrintLinkedList(mergedRecurive);
+}
+
+static void RunDesignLinkedList()
+{
+    DesignLinkedList.MyLinkedList myLinkedList = new DesignLinkedList.MyLinkedList();
+
+    Console.WriteLine("Adding at head: 1");
+    myLinkedList.AddAtHead(1);
+    myLinkedList.PrintList(); // 1 <-> null
+
+    Console.WriteLine("Adding at tail: 3");
+    myLinkedList.AddAtTail(3);
+    myLinkedList.PrintList(); // 1 <-> 3 <-> null
+
+    Console.WriteLine("Adding at index 1: 2");
+    myLinkedList.AddAtIndex(1, 2);
+    myLinkedList.PrintList(); // 1 <-> 2 <-> 3 <-> null
+
+    Console.WriteLine("Getting value at index 1:");
+    Console.WriteLine(myLinkedList.Get(1)); // Output: 2
+
+    Console.WriteLine("Deleting node at index 1");
+    myLinkedList.DeleteAtIndex(1);
+    myLinkedList.PrintList(); // 1 <-> 3 <-> null
+
+    Console.WriteLine("Getting value at index 1:");
+    Console.WriteLine(myLinkedList.Get(1)); // Output: 3
 }

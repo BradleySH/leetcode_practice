@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("neetcodesolutions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01d6cef6000b51784713815f8dd51dbae2e3e773")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b2695ff20065c745b2dca6ab606607f5390e530")]
 [assembly: System.Reflection.AssemblyProductAttribute("neetcodesolutions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("neetcodesolutions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
