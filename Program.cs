@@ -1,7 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using NeetcodeSolutions.Solutions.LinkedLists;
 
-string solutionToRun = "DesignLinkedList";
+string solutionToRun = "Cafeteria";
 
 switch (solutionToRun)
 {
@@ -27,6 +28,10 @@ switch (solutionToRun)
 
     case "DesignLinkedList":
         RunDesignLinkedList();
+        break;
+
+    case "Cafeteria":
+        RunCafeteria();
         break;
 }
 
@@ -142,4 +147,17 @@ static void RunDesignLinkedList()
 
     Console.WriteLine("Getting value at index 1:");
     Console.WriteLine(myLinkedList.Get(1)); // Output: 3
+}
+
+static void RunCafeteria()
+{
+    int[] students = [1, 1, 0, 0];
+    int[] sandwiches = [0, 1, 0, 1];
+
+    Console.WriteLine("Output Example 1: " + Cafeteria.CountStudentsUnableToEat(students, sandwiches));
+
+    students = [1, 1, 1, 0, 0, 1];
+    sandwiches = [1, 0, 0, 0, 1, 1];
+
+    Console.WriteLine("Output Example 2: " + Cafeteria.CountStudentsUnableToEat(students, sandwiches));
 }
