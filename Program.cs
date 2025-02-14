@@ -2,7 +2,7 @@
 using System;
 using NeetcodeSolutions.Solutions.LinkedLists;
 
-string solutionToRun = "Cafeteria";
+string solutionToRun = "MyStack";
 
 switch (solutionToRun)
 {
@@ -32,6 +32,10 @@ switch (solutionToRun)
 
     case "Cafeteria":
         RunCafeteria();
+        break;
+
+    case "MyStack":
+        RunMyStack();
         break;
 }
 
@@ -160,4 +164,16 @@ static void RunCafeteria()
     sandwiches = [1, 0, 0, 0, 1, 1];
 
     Console.WriteLine("Output Example 2: " + Cafeteria.CountStudentsUnableToEat(students, sandwiches));
+}
+
+static void RunMyStack()
+{
+    MyStack myStack = new MyStack();
+    myStack.Push(1);
+    myStack.Push(2);
+    Console.WriteLine("Top Element: " + myStack.Top());
+    Console.WriteLine("Popped Element: " + myStack.Pop());
+    Console.WriteLine("Is Stack Empty: " + myStack.Empty());
+    Console.WriteLine("Popped Element: " + myStack.Pop());
+    Console.WriteLine("Is Stack Empty: " + myStack.Empty());
 }
