@@ -1,8 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
-using NeetcodeSolutions.Solutions.LinkedLists;
+﻿using NeetcodeSolutions.Solutions.LinkedLists;
+using NeetcodeSolutions.Solutions.Recursion;
 
-string solutionToRun = "MyStack";
+string solutionToRun = "ClimbingStairs";
 
 switch (solutionToRun)
 {
@@ -36,6 +35,10 @@ switch (solutionToRun)
 
     case "MyStack":
         RunMyStack();
+        break;
+
+    case "ClimbingStairs":
+        RunClimbingStairs();
         break;
 }
 
@@ -176,4 +179,13 @@ static void RunMyStack()
     Console.WriteLine("Is Stack Empty: " + myStack.Empty());
     Console.WriteLine("Popped Element: " + myStack.Pop());
     Console.WriteLine("Is Stack Empty: " + myStack.Empty());
+}
+
+static void RunClimbingStairs()
+{
+    Console.WriteLine("Climbing Stairs (Iterative)");
+    var climbingStairs = new ClimbingStairs();
+    Console.WriteLine("Example 1: " + climbingStairs.ClimbStairs(2));
+    Console.WriteLine("Example 2: " + climbingStairs.ClimbStairs(3));
+    
 }
