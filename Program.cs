@@ -1,7 +1,8 @@
 ﻿using NeetcodeSolutions.Solutions.LinkedLists;
 using NeetcodeSolutions.Solutions.Recursion;
+using NeetcodeSolutions.Solutions.Sorting;
 
-string solutionToRun = "ClimbingStairs";
+string solutionToRun = "MergeKSortedLists";
 
 switch (solutionToRun)
 {
@@ -39,6 +40,10 @@ switch (solutionToRun)
 
     case "ClimbingStairs":
         RunClimbingStairs();
+        break;
+
+    case "MergeKSortedLists":
+        RunMergeKSortedLists();
         break;
 }
 
@@ -187,5 +192,43 @@ static void RunClimbingStairs()
     var climbingStairs = new ClimbingStairs();
     Console.WriteLine("Example 1: " + climbingStairs.ClimbStairs(2));
     Console.WriteLine("Example 2: " + climbingStairs.ClimbStairs(3));
-    
+
+}
+
+static void RunMergeKSortedLists()
+{
+    // Example 1:
+    // Input: lists = [[1,4,5],[1,3,4],[2,6]]
+    // Output: [1,1,2,3,4,4,5,6]
+    MergeListNode? l1 = CreateList(new int[] { 1, 4, 5 });
+    MergeListNode? l2 = CreateList(new int[] { 1, 3, 4 });
+    MergeListNode? l3 = CreateList(new int[] { 2, 6 });
+
+    MergeListNode?[] lists = new MergeListNode?[] { l1, l2, l3 };
+    MergeKSortedLists sol = new MergeKSortedLists();
+    MergeListNode? merged = sol.MergeKLists(lists);
+    Console.WriteLine("Merged List:");
+    PrintList(merged);
+}
+
+static MergeListNode? CreateList(int[] arr)
+{
+    MergeListNode dummy = new MergeListNode(0);
+    MergeListNode? current = dummy;
+    foreach (int num in arr)
+    {
+        current.next = new MergeListNode(num);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+static void PrintList(MergeListNode? head)
+{
+    while (head != null)
+    {
+        Console.Write(head.val + " -> ");
+        head = head.next;
+    }
+    Console.WriteLine("null");
 }
