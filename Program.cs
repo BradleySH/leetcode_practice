@@ -1,8 +1,9 @@
 ﻿using NeetcodeSolutions.Solutions.LinkedLists;
 using NeetcodeSolutions.Solutions.Recursion;
 using NeetcodeSolutions.Solutions.Sorting;
+using SystemDesign;
 
-string solutionToRun = "MergeKSortedLists";
+string solutionToRun = "Hyperloglog";
 
 switch (solutionToRun)
 {
@@ -44,6 +45,18 @@ switch (solutionToRun)
 
     case "MergeKSortedLists":
         RunMergeKSortedLists();
+        break;
+
+    case "BloomFilter":
+        RunBloomFilter();
+        break;
+
+    case "Geohash":
+        RunGeohash();
+        break;
+
+    case "Hyperloglog":
+        RunHyperloglog();
         break;
 }
 
@@ -231,4 +244,54 @@ static void PrintList(MergeListNode? head)
         head = head.next;
     }
     Console.WriteLine("null");
+}
+
+static void RunBloomFilter()
+{
+    var bloomFilter = new BloomFilter<string>(1024, 3);
+
+    bloomFilter.Add("apple");
+    bloomFilter.Add("banana");
+
+    Console.WriteLine("Contains apple: " + bloomFilter.Contains("apple"));
+    Console.WriteLine("Contains banana: " + bloomFilter.Contains("banana"));
+    Console.WriteLine("Contains orange: " + bloomFilter.Contains("orange"));
+    Console.WriteLine("Contains app: " + bloomFilter.Contains("app"));
+}
+
+static void RunGeohash()
+{
+    double latitude = 37.8324;
+    double longitude = -122.4129;
+
+    // Encode coords into a Geohash with a precision of 9 characters
+    string geohash = Geohash.Encode(latitude, longitude, 9);
+    Console.WriteLine("Geohash: " + geohash);
+}
+
+static void RunHyperloglog()
+{
+    var hll = new Hyperloglog(10); // Using b=10 (1024 registers)
+    string[] items = new string[]
+    {
+        "apple",
+        "banana",
+        "cherry",
+        "date",
+        "elderberry",
+        "fig",
+        "grape",
+        "honeydew",
+        "kiwi",
+        "lemon"
+    };
+
+    foreach (var item in items)
+    {
+        hll.Add(item);
+    }
+
+    double estimate = hll.Estimate();
+    Console.WriteLine($"Estimated distinct count: {estimate}");
+
 }
