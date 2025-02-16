@@ -3,7 +3,7 @@ using NeetcodeSolutions.Solutions.Recursion;
 using NeetcodeSolutions.Solutions.Sorting;
 using SystemDesign;
 
-string solutionToRun = "Hyperloglog";
+string solutionToRun = "ConsistentHashing";
 
 switch (solutionToRun)
 {
@@ -57,6 +57,10 @@ switch (solutionToRun)
 
     case "Hyperloglog":
         RunHyperloglog();
+        break;
+
+    case "ConsistentHashing":
+        RunConsistentHashing();
         break;
 }
 
@@ -294,4 +298,21 @@ static void RunHyperloglog()
     double estimate = hll.Estimate();
     Console.WriteLine($"Estimated distinct count: {estimate}");
 
+}
+
+static void RunConsistentHashing()
+{
+    List<string> nodes = new List<string> { "Node1", "Node2", "Node3" };
+    var consistentHash = new ConsistentHashing<string>(nodes);
+
+    // Look up which node should store a given key
+    string key = "myDataKey";
+    string nodeForKey = consistentHash.GetNode(key);
+    Console.WriteLine($"\nKey {key} is stored on node {nodeForKey}");
+
+    // Demo adding a new node
+    consistentHash.Add("Node4");
+
+    nodeForKey = consistentHash.GetNode(key);
+    Console.WriteLine($"\nAfter adding Node4, key '{key}' is assigned to node: {nodeForKey}");
 }

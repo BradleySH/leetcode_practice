@@ -161,3 +161,46 @@ see [Geohash.cs](../SystemDesign/Geohash.cs)
 - **Streaming Data:**
   - Applications that need real-time estimates (like monitoring unique user interactions in social media feeds) can use Hyperloglog due to its fast, constant-time operations.
 
+### How to Implement a Hyperloglog in C-Sharp
+
+see [Hyperloglog.cs](../SystemDesign/Hyperloglog.cs)
+
+## Consistent Hashing
+
+### What is Consistent Hashing?
+
+- A ring representing the entire range of possible hash values. In a distributed system, Consistent Hashing is a technique that assigns both keys (data items) and nodes (servers, caches, etc.) onto this circle using a hash function. Each key is then stored in the first node that appears when you move clockwise around the circle from the keys position.
+
+### Why It's Needed
+
+- **Minimizes Rebalancing:** When nodes (servers) join or leave the system, only a small subset of keys need to be moved to maintain balance.
+  - **Traditional Hashing:** Adding or removing a node typically forces a complete rehash of all keys.
+  - **Consistent Hashing:** Only the keys that were mapped to the affected node need to be reassigned.
+- **Improve Scalability:** It distributes keys more evenly across nodes, preventing any one node from becoming a bottleneck.
+- **Fault Tolerance:** If a node fails, only the keys assigned to that node need to be reassigned to the next node on the ring, keeping the rest of the system stable.
+
+### How Does It Work?
+
+1. **Mapping Nodes to a Circle:**
+   - Each node is hashed (often multiple times using virtual nodes) to a position on the circle.
+
+2. **Mapping Keys to the Circle:**
+   - Each key is also hashed to a position on the circle.
+
+3. **Assigning Keys to Nodes:**
+   - For any given key, move clockwise on the circle until you encounter a node. That node is responsible for that key.
+   - If you reach the end of the circle without finding a node, wrap around to the beginning.
+
+4. **Virtual Nodes:**
+   - To improve distribution, each physical node can be represented by multiple "virtual" nodes on the ring.
+   - This helps even out the load, especially when the number of nodes is small.
+
+### Use Cases
+
+- **Distributed Caching:**
+  - Systems like Memcached use consistent hashing to distribute cached data across many servers.
+- **Distributed Databases:**
+- Databases like Apache Cassandra and Amazon DynamoDB use consistent hashing for data partitioning.
+- **Load Balancing:**
+  - It helps route client requests to the correct server in a dynamic server environment.
+
