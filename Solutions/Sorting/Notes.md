@@ -46,3 +46,20 @@ QuickSort is not a stable sort.
 ## Bucket Sort
 
 Bucket Sort is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm or by recursively applying the bucket sort algorithm.
+
+### Implementation
+
+1. Create a number of buckets equal to the range of the array.
+2. Distribute the elements of the array into the buckets.
+3. Sort each bucket individually.
+4. Concatenate the buckets together.
+
+![BucketSort](../../assets/pics/BucketSort.png)
+
+### Time Complexity
+
+O(n + k) where n is the number of elements in the array and k is the number of buckets.
+
+### Stability
+
+Bucket Sort is not a stable sort.
