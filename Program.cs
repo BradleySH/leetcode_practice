@@ -3,7 +3,7 @@ using NeetcodeSolutions.Solutions.Recursion;
 using NeetcodeSolutions.Solutions.Sorting;
 using SystemDesign;
 
-string solutionToRun = "ConsistentHashing";
+string solutionToRun = "Raft";
 
 switch (solutionToRun)
 {
@@ -61,6 +61,10 @@ switch (solutionToRun)
 
     case "ConsistentHashing":
         RunConsistentHashing();
+        break;
+
+    case "Raft":
+        RunRaft();
         break;
 }
 
@@ -315,4 +319,22 @@ static void RunConsistentHashing()
 
     nodeForKey = consistentHash.GetNode(key);
     Console.WriteLine($"\nAfter adding Node4, key '{key}' is assigned to node: {nodeForKey}");
+}
+
+static void RunRaft()
+{
+    List<RaftNode> nodes = new List<RaftNode>();
+    for (int i = 1; i <= 5; i++)
+    {
+        nodes.Add(new RaftNode(i));
+    }
+
+    foreach (var node in nodes)
+    {
+        node.Cluster = nodes;
+        node.Start();
+    }
+
+    Thread.Sleep(5000);
+    Console.WriteLine("Simulation Ended");
 }

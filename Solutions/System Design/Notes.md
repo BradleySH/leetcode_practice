@@ -204,3 +204,50 @@ see [Hyperloglog.cs](../SystemDesign/Hyperloglog.cs)
 - **Load Balancing:**
   - It helps route client requests to the correct server in a dynamic server environment.
 
+### How to Implement Consistent Hashing in C-Sharp
+
+see [ConsistentHashing.cs](../SystemDesign/ConsistentHashing.cs)
+
+## Raft Algorithm
+
+### What is the Raft Algorithm?
+
+- The Raft algorithm is a consensus algorithm that is used to elect a leader in a distributed system.
+- It is a way to ensure that a distributed system is consistent and has a single leader.
+
+### Why It's Needed
+
+- **Consistency in Distributed Systems:** In systems where data is replicated across multiple machines, you need all nodes on the order of operations (like updates or transactions). Raft help maintain a consisten, replicated log across these nodes.
+- **Fault Tolerance:** Raft can handle server failures. If a node goes down, the system can still operate by electing a new leader and continuing to replicate logs.
+- **Simpler to Understand and Implement:** Raft was designed with clarity in mind. It breaks down consensus into clear sub-problems such as leader election, log replication, and safety, making it easier to reason about and implement.
+
+### How Does It Work?
+
+Raft divides its operation into several key components:
+1. **Leader Election:**
+   - Roles: Each server can be in one of three states: Leader Follower, or Candidate.
+   - Election Process:
+     - Initialy, all nodes start as followers.
+     - If a fllower doesn't hear from a leader(via heartbeat messages) within a set timeout, it becomes a candidate and starts an election.
+     - The candidate requests votes from other nodes.
+     - Once it recieves votes from a majority of the nodes, it becomes the leader.
+     - The leader then starts sending regular heartbeat messages to maintain it authority.
+
+2. **Log Replication:**
+   - Leader's Role: The leader receieves client commands and appends them as entries in its log.
+   - Replication to Followers: It then sends these log entries to its followers.
+   - Commitment: When a majority of followers have writen the entry, the leader marks the entry as committed and applies it to its state machine.
+   - Consistency: If the leader fails, the new leader ensures that logs are consistent among the remaining nodes.
+
+3. **Safety and Log Matching**
+   - Consistency Guarantees: Raft ensures that if a log entry is committed, it will appear in the logs of all future leaders.
+   - Conflict Resolution: When inconsistencies are detected (e.g., due to network partitions), the leader helps reconcile differences to maintain a consistent log across nodes.
+
+### Use Cases
+
+- **Distributed Databases:**
+  - Systems like etcd, Consul, and CockroachDB use raft to manage configuration data and maintain consistency across clusters.
+- **Distributed Key-Value Stores:**
+  - Raft is used in systems where multiple nodes need to agree on the state of a key-value store.
+- **Fault-Tolerant Services:**
+  - Any system requiring high availability and consistency - like coordination services or distributed locks - can benefit from Raft's consensus mechanism.
