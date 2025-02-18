@@ -2,8 +2,9 @@
 using NeetcodeSolutions.Solutions.Recursion;
 using NeetcodeSolutions.Solutions.Sorting;
 using SystemDesign;
+using Trees;
 
-string solutionToRun = "Raft";
+string solutionToRun = "BinarySearchTree";
 
 switch (solutionToRun)
 {
@@ -65,6 +66,10 @@ switch (solutionToRun)
 
     case "Raft":
         RunRaft();
+        break;
+
+    case "BinarySearchTree":
+        RunBinarySearchTree();
         break;
 }
 
@@ -337,4 +342,17 @@ static void RunRaft()
 
     Thread.Sleep(5000);
     Console.WriteLine("Simulation Ended");
+}
+
+static void RunBinarySearchTree()
+{
+    TreeNode? root = new TreeNode(4,
+        new TreeNode(2,
+            new TreeNode(1, null, null),
+            new TreeNode(3, null, null)),
+        new TreeNode(7, null, null));
+    int val = 2;
+
+    TreeNode? result = BinarySearchTree.SearchBST(root, val);
+    Console.WriteLine("Result: " + result.Value);
 }
