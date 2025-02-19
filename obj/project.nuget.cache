@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dKrQPbEp/FnoLNfNjzhTAgit/fIyZn8qKQDBiyRY6q9F8FUh11g0kk1txoy1GGGjsWhEAK/Nj4qqfxGMnMW+cQ==",
+  "dgSpecHash": "J3UdhnQRWBI=",
   "success": true,
   "projectFilePath": "/Users/bradleyhorlander/Development/neetcode/neetcodesolutions/neetcodesolutions.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/bradleyhorlander/.nuget/packages/microsoft.netcore.app.ref/8.0.13/microsoft.netcore.app.ref.8.0.13.nupkg.sha512",
+    "/Users/bradleyhorlander/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.13/microsoft.aspnetcore.app.ref.8.0.13.nupkg.sha512",
+    "/Users/bradleyhorlander/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.13/microsoft.netcore.app.host.osx-arm64.8.0.13.nupkg.sha512"
+  ],
   "logs": []
 }
